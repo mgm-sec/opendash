@@ -26,3 +26,7 @@ Click **⚙ SETUP** in the dock: name/greeting, weather locations, RSS feeds, co
 - The server exists only to serve the static files and proxy `/rss` (CORS) and `/ping` (health checks). Those proxies are **open** — run openDash locally or behind auth, don't expose it to the internet.
 - Weather is fetched directly from the browser via [Open-Meteo](https://open-meteo.com/).
 - Pomodoro notifications use a service worker; allow notifications when prompted.
+
+## License
+
+[EUPL-1.2](LICENSE)
