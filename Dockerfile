@@ -1,6 +1,6 @@
 # node:24-alpine = current Node LTS ("Krypton", LTS until Jun 2026) on Alpine — 0 known CVEs.
 # Pinned to 24 rather than lts-alpine so major bumps arrive as Dependabot PRs, not silently.
-FROM node:24-alpine
+FROM node:26-alpine
 # The app needs only the node binary — strip npm/yarn/corepack attack surface.
 RUN rm -rf /usr/local/lib/node_modules /opt/yarn* /usr/local/bin/npm /usr/local/bin/npx \
     /usr/local/bin/yarn /usr/local/bin/yarnpkg /usr/local/bin/corepack
