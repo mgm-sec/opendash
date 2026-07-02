@@ -2,7 +2,7 @@ services:
   opendash:
     build: .
     ports:
-      - "8151:8151"
+      - "127.0.0.1:8151:8151" # loopback-only: LAN devices can't reach it; drop the 127.0.0.1 to allow them
     read_only: true
     cap_drop: [ALL]
     security_opt:

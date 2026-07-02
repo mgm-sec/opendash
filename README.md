@@ -23,7 +23,7 @@ Click **⚙ SETUP** in the dock: name/greeting, weather locations, RSS feeds, co
 
 ## Notes
 
-- The server exists only to serve the static files and proxy `/rss` (CORS) and `/ping` (health checks). Those proxies are **open** — run openDash locally or behind auth, don't expose it to the internet.
+- The server exists only to serve the static files and proxy `/rss` (CORS) and `/ping` (health checks). Those proxies are **open** (no auth, no allow-list — anyone who can reach the port can make the server fetch arbitrary URLs, including internal ones). The compose file therefore binds to `127.0.0.1` only, so the dashboard is reachable solely from the host machine. To use it from other devices on your LAN, drop the `127.0.0.1:` prefix from the port mapping — but never expose it to the internet without auth in front.
 - Weather is fetched directly from the browser via [Open-Meteo](https://open-meteo.com/).
 - Pomodoro notifications use a service worker; allow notifications when prompted.
 
