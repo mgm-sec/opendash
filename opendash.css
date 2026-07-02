@@ -1,0 +1,105 @@
+/* opendash.css — openDash additions on top of the copied style.css:
+   Today task-list controls + the ⚙ settings dialog. */
+
+/* ── Today task list ─────────────────────────────────────── */
+#today-add-form {
+  padding: 0.35rem 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+#today-add-input {
+  width: 100%;
+  background: rgba(0,0,0,0.25);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 0.3rem 0.5rem;
+  outline: none;
+}
+#today-add-input:focus { border-color: var(--cyan); }
+
+.today-check {
+  flex-shrink: 0;
+  accent-color: var(--cyan);
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+}
+.today-del {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  color: var(--text-faint);
+  font-size: 0.65rem;
+  cursor: pointer;
+  padding: 0.1rem 0.3rem;
+  opacity: 0;
+  transition: opacity var(--transition), color var(--transition);
+}
+.today-item:hover .today-del { opacity: 1; }
+.today-del:hover { color: var(--red); }
+.today-done .today-item-title {
+  text-decoration: line-through;
+  color: var(--text-faint);
+}
+
+/* ── Settings dialog ─────────────────────────────────────── */
+#settings-dialog {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.4rem;
+  width: min(600px, 92vw);
+  max-height: 85vh;
+  overflow-y: auto;
+  font-family: var(--font-mono);
+}
+#settings-dialog::backdrop { background: rgba(0,0,0,0.65); }
+
+.settings-h {
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+  color: var(--cyan);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.settings-section {
+  padding: 0.7rem 0;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.settings-tile-hdr {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.settings-tile-name {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  min-width: 110px;
+}
+.settings-title { flex: 1; }
+.settings-hide {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.settings-hide input { accent-color: var(--cyan); }
+.settings-ta { resize: vertical; }
+.settings-actions {
+  display: flex;
+  gap: 0.5rem;
+  padding-top: 1rem;
+}
+.settings-actions-spacer { flex: 1; }

@@ -1,0 +1,12 @@
+services:
+  opendash:
+    build: .
+    ports:
+      - "8151:8151"
+    read_only: true
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+    extra_hosts:
+      - "host.docker.internal:host-gateway" # health-check widget pings host services
